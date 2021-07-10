@@ -23,7 +23,7 @@ Calculates the amount of profits per hour of each mining rig and the time requir
 
 + JDK 1.7 or above
 
-+ Maven latest stable
++ Maven 3.6.3 or above
 
 
 
