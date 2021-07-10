@@ -7,7 +7,7 @@ import com.google.gson.JsonParser;
 /**
  * Handles fetching of resources and printing of data
  */
-public class BitcoinUSD {
+public class Rates {
     /**
      * Fetches a JsonObject from a url
      *
@@ -35,10 +35,25 @@ public class BitcoinUSD {
      *
      * @return Bitcoin to USD price
      */
-    public static double getUSD() {
-        JsonObject jo = BitcoinUSD.fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+    public static double bitcoinToUsd() {
+        JsonObject jo = Rates.fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
         JsonObject bpi = jo.get("bpi").getAsJsonObject().get("USD").getAsJsonObject();
 
         return bpi.get("rate_float").getAsDouble();
+    }
+
+    /**
+     * Returns USD to CAD rate
+     *
+     * @return USD to CAD rate
+     */
+    public static double usdToCad() {
+        JsonObject jo = Rates.fetch("https://api.coindesk.com/v1/bpi/currentprice/CAD.json");
+        Double bitcoinUsd = jo.get("bpi").getAsJsonObject().get("USD").getAsJsonObject().get("rate_float")
+                .getAsDouble();
+        Double bitcoinCad = jo.get("bpi").getAsJsonObject().get("CAD").getAsJsonObject().get("rate_float")
+                .getAsDouble();
+
+        return (bitcoinCad / bitcoinUsd);
     }
 }
