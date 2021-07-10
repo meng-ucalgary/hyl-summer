@@ -77,7 +77,7 @@ class CSVPull [[java:ca.hackyourlearning.CSVPull]] {
 class Miner {
 }
 
-CSVPull --> "*" Miner : Uses
+CSVPull --> Miner : Uses
 
 class Miner [[java:ca.hackyourlearning.Miner]] {
 	+name: String
