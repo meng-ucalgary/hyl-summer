@@ -29,7 +29,7 @@ public class apitTest {
                 while ((line = reader.readLine()) != null) {
                     stringBuilder.append(line);
                 }
-                System.out.println(stringBuilder.toString());
+                
                 JSONObject data = new JSONObject(stringBuilder.toString()); 
                 
                 
@@ -46,7 +46,7 @@ public class apitTest {
 		
 	
 	public static void main(String[] args) throws Exception {
-        
+        System.out.println(getUSD());
     }
 
 }
