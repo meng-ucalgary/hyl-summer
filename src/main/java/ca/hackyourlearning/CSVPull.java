@@ -39,8 +39,7 @@ public class CSVPull {
         }
 
         catch (FileNotFoundException e) {
-            System.err.printf("%n%n[%s] Please make sure \'MiningSetup.csv\' is present at the project directory",
-                    ColorText.text("FAIL", Color.RED));
+            System.err.printf("%n%nPlease make sure \'MiningSetup.csv\' is present at the project directory");
         }
     }
 }

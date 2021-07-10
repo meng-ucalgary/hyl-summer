@@ -1,14 +1,32 @@
-## Getting Started
+# HYL Project
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Authors
 
-## Folder Structure
+[Bhavyai Gupta](https://github.com/zbhavyai)
 
-The workspace contains two folders by default, where:
+[Hamza Luqman](https://github.com/hamzaluqman)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+[Greg Slowski](https://github.com/gslowski)
 
-## Dependency Management
+[Michael Lee](https://github.com/mlee2021)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+
+## About
+
+Calculates the amount of profits per hour of each mining rig and the time required to get the amount of Bitcoins entered by the user.
+
+
+
+## Dependencies
+
++ JDK 1.7 or above
+
++ Maven latest stable
+
+
+
+## UML Diagram
+
+![BTC UML](HYL_UML.png)

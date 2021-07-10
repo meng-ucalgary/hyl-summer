@@ -1,0 +1,88 @@
+@startuml
+class JSONGetter [[java:ca.hackyourlearning.JSONGetter]] {
+	-urlquery: URL
+	+JSONGetter(url: String)
+	+fullResponse(): String
+	+fullResponse(header: boolean): String
+	-getResponse(conn: HttpURLConnection, header: boolean): String
+}
+
+class BTCCalculations [[java:ca.hackyourlearning.BTCCalculations]] {
+	-miningTime: double[]
+	-totalMiningOutput: double
+	-bitcoinVolume: double
+	-profit: double
+	-btcUsd: double
+	+BTCCalculations(volume: double)
+	+miningTimeGetter(): double[]
+	+profitCalculator(): String
+	+toString(): String
+}
+
+JSONGetter <-- Rates: Uses
+
+class CSVPull {
+}
+
+BTCCalculations --> CSVPull : Uses
+
+BTCCalculations --> Rates: Uses
+
+BTCCalculations --> EnergyRates: Uses
+
+class Rates [[java:ca.hackyourlearning.Rates]] {
+	+{static} fetch(url: String): JsonObject
+	+{static} bitcoinToUsd(): double
+	+{static} usdToCad(): double
+}
+
+class MineGUI [[java:ca.hackyourlearning.MineGUI]] {
+	-inputDisplay: JTextArea
+	-outputDisplay: JTextArea
+	-analyze: JButton
+	-clear: JButton
+	-inputText: JLabel
+	-outputResult: JLabel
+	+MineGUI(title: String)
+	+actionPerformed(e: ActionEvent): void
+	+{static} main(args: String[]): void
+}
+
+class BTCCalculations {
+}
+
+MineGUI --> BTCCalculations : Uses
+
+class JFrame {
+}
+
+JFrame <|-- MineGUI
+
+interface ActionListener {
+}
+
+ActionListener <|.. MineGUI
+
+class EnergyRates [[java:ca.hackyourlearning.EnergyRates]] {
+	~energy_rates: double[]
+	+EnergyRates()
+	+getEnergy_rates(): double[]
+}
+
+class CSVPull [[java:ca.hackyourlearning.CSVPull]] {
+	+CSVPull()
+	+puller(): void
+}
+
+class Miner {
+}
+
+CSVPull --> "*" Miner : Uses
+
+class Miner [[java:ca.hackyourlearning.Miner]] {
+	+name: String
+	+daily_output: Double
+	+wattage: Double
+	+Miner(name: String, daily_output: Double, wattage: Double)
+}
+@enduml
