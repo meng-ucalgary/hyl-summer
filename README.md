@@ -1,32 +1,38 @@
-# HYL Project
+# Crypto Mining - HYL Summer 2021
 
-## Authors
+An app to calculate profit per hour of each mining rig and the time required to get the specified amount of Bitcoins. The Bitcoin to USD exchange rate is taken from the **Coindesk API**. The power consumption, energy rate, and hashrate of each miner is taken from supplied CSV files.
 
-[Bhavyai Gupta](https://github.com/zbhavyai)
+The project was the runner up in the HYL Summer 2021 Hackathon.
 
-[Hamza Luqman](https://github.com/hamzaluqman)
+## Project Sturcture
 
-[Greg Slowski](https://github.com/gslowski)
-
-[Michael Lee](https://github.com/mlee2021)
-
-
-
-
-## About
-
-Calculates the amount of profits per hour of each mining rig and the time required to get the amount of Bitcoins entered by the user.
-
-
+- [Problem Set](Documents/03_Problem_Set.pdf) - the problem set document
+- [MiningSetup.csv](MiningSetup.csv) - contains hashrate and wattage of mining rigs
+- [EnergyRates.csv](EnergyRates.csv) - contains the energy rates
+- [src](src) - contains all the source code
 
 ## Dependencies
 
-+ JDK 1.7 or above
+- JDK 11 or above
+- Maven 3.6.3 or above
 
-+ Maven 3.6.3 or above
+## How to run
 
+1. Clone the repository on your machine
 
+2. Run the below command from the repository's root directory to launch the GUI
+
+   ```bash
+   $ mvn exec:java -Dexec.mainClass="ca.hackyourlearning.MineGUI"
+   ```
 
 ## UML Diagram
 
-![BTC UML](HYL_UML.png)
+![BTC UML](images/HYL_UML.png)
+
+## Contributors
+
+- [Bhavyai Gupta](https://github.com/zbhavyai)
+- [Greg Slowski](https://github.com/gslowski)
+- [Hamza Luqman](https://github.com/hamzaluqman)
+- [Michael Man Yin Lee](https://github.com/mlee2021)
